@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+
+</head>
+
+
+
+<style>
+
+    body{
+        background:url(grass.jpg)no-repeat center;
+        background-size: cover;
+    }
+
+    table ,th,td{
+        text-overline-color: black;
+        width: 80%;
+        margin:auto;
+        border:1px solid white;
+        border-collapse: collapse;
+        text-align: center;
+        font-size:30px;
+        table-layout: fixed;
+        background: orange;
+        opacity: 0.5;
+        margin-top:100px;
+
+    }
+
+    th,td{
+        padding: 20px;
+        opacity: 0.9;
+        text-decoration-color: black;
+    }
+
+</style>
+
+
+
+<body>
+
+
+<header>
+
+       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+           <a class="navbar-brand"  style="color: #74b9ff">HostelJ Mess</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+    <ul class="navbar-nav ml-auto">
+      {% if user.is_authenticated %}
+    <li>
+      <a class="nav-link" href="{% url  'view_menu' %}">View Menu</a>
+    </li>
+    <li>
+      <a class="nav-link" href="{% url  'mess_update' %}">Update Menu</a>
+    </li>
+
+          <li>
+      <a class="nav-link" href="{% url 'about' %}">About</a>
+    </li>
+
+    <li>
+      <a class="nav-link" href="{% url 'logout' %}">Signout</a>
+    </li>
+
+    <li>
+        <a class="nav-link" style="color: #badc58">Welcome : Mess Manager</a>
+    </li>
+
+
+
+    {% else %}
+    <li class="nav-item active">
+              <a class="nav-link" href="{% url 'login' %}">Login<i class="ml-2 fas fa-user"></i></a>
+            </li>
+
+    </ul>
+            {% endif %}
+
+  </div>
+
+</nav>
+</header>
+
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

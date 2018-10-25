@@ -1,0 +1,24 @@
+{% extends 'mess/base.html' %}
+{% block content %}
+{% load bootstrap3 %}
+    {% load staticfiles %}
+ <div class="menu">
+    <h1>
+        This weeks mess menu
+    </h1>
+{% for food in query_results %}
+
+    <h1></h1>
+
+    <div>
+
+    <p>
+        The day is {{ food.day }} This time is {{ food.time }} and the dish is {{ food.item_name }}
+    </p>
+
+    </div>
+
+
+{% endfor %}
+</div>
+{% endblock %}

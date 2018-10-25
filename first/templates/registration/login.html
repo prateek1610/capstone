@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="height:100vh;">
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel J Mess</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/styles.css"%}">
+</head>
+
+<body>
+
+    <div class="login-dark" style="height:100vh;">
+        {% if form.errors %}
+                <p> Your username and password didn't match! Please try again</p>
+        {% endif %}
+        <form method="POST" action="{% url 'login' %}">
+
+               {% csrf_token %}
+            <h2 class="sr-only">Login Form</h2>
+            <p style="text-align:center;font-size:22px;">Hostel Admin Login</p>
+
+            <div class="illustration pt-3 pb-5"><img src="{% static "img/jlogo.png" %}"></div>
+            <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+
+        </form>
+
+    </div>
+
+    <script src="{% static "js/jquery.min.js"%}"></script>
+    <script src="{%  static "js/bootstrap.min.js"%}"></script>
+
+</body>
+
+</html>

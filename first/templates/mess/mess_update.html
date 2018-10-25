@@ -1,0 +1,41 @@
+{% extends 'mess/base.html' %}
+{% block content %}
+{% load bootstrap3 %}
+    {% load staticfiles %}
+    <section>
+
+
+
+<div class="container">
+
+    <div class="jumbotron">
+
+        <div class="illustration pt-3 pb-5" align="middle" ><img src="{% static "img/jlogo.png" %}"></div>
+
+            <h1 style="text-align: center">UPDATE MESS MENU</h1>
+
+<form  class="post-form" method="POST">
+	{% csrf_token %}
+<table>
+{{ mess_form1.as_table }}
+{{ mess_form2.as_table }}
+    {{ mess_form3.as_table }}
+</table>
+
+
+</select></p>
+
+	<button type="submit" class ='btn btn-lg btn-success'>Save</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+	var editor=new MediumEditor('.editabel');</script>
+
+{% endblock %}
