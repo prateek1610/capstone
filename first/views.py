@@ -23,7 +23,6 @@ def menu_entry(request):
     if request.method == "POST":
         if request.method == "POST":
             mess_form = MenuForm(data=request.POST)
-            mess_form.day = 'MONDAY'
             if mess_form.is_valid():
                 mess = mess_form.save(commit=False)
                 # mess.item_name=item_name
@@ -34,9 +33,7 @@ def menu_entry(request):
                 print(mess_form.errors)
         else:
             mess_form = MenuForm()
-        return render(request, 'mess/mess_update.html',
-                      {'mess_form': mess_form, 'lunch_time': lunch_time, 'breakfast_time': breakfast_time
-                          , 'dinner_time': dinner_time, 'week_day': week_days, 'item1': item1})
+        return render(request,'mess/mess_update.html',{'mess_form':mess_form})
 
 
 def viewmenu(request):
