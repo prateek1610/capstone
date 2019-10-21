@@ -53,4 +53,4 @@ Theano==1.0.1+100.g2c19431b1
 urllib3==1.20
 virtualenv==15.1.0
 virtualenvwrapper-win==1.2.2
-Werkzeug==0.12.1
+Werkzeug==0.15.3
