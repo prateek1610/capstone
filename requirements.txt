@@ -33,7 +33,7 @@ pathlib2==2.3.2
 Pillow==4.3.0
 pluggy==0.7.1
 protobuf==3.1.0
-py==1.6.0
+py==1.10.0
 pycparser==2.18
 pydot==1.2.4
 PyMySQL==0.7.11
